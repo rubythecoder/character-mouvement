@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3282asfnwffx"]
+
+[ext_resource type="Texture2D" uid="uid://o2gd77ofgm3l" path="res://icon.svg" id="1_ci1kj"]
+[ext_resource type="Script" uid="uid://1gkedsty6d5f" path="res://into the unkown/scenes/player.gd" id="1_sswxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sswxm"]
+size = Vector2(61, 60)
+
+[node name="player" type="CharacterBody2D"]
+floor_stop_on_slope = false
+script = ExtResource("1_sswxm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ci1kj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sswxm")
+
+[node name="jump buffering timer" type="Timer" parent="."]
